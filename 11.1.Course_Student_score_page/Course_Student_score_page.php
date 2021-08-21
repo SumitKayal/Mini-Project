@@ -47,7 +47,7 @@ $email=$_GET['email'];
       <a href="#">Contact</a>
       <a href="#">Log Out</a>
     </div>
-    <a class="navbar-brand" href="D:\Mini Project\7.Faculty Member Home Page\FacMemHome.html">
+    <a class="navbar-brand" href="../8.Course start Page\Course start Page.php?id=<?php echo $_GET['id'];?>&year=<?php echo $_GET['year'];?>">
         <img class="UnivLogo " src="Image/univLogo.png" alt="univLogo">
            University of Calcutta</a>
   
@@ -89,7 +89,8 @@ $email=$_GET['email'];
       <select class="select form-control-sm" id="exroll" name="exroll">
         <?php
             $cid=$_GET['id'];
-            $sql="SELECT s.exmroll,CID FROM stu_info s, course c WHERE s.ssem=c.sem AND c.CID='$cid' AND s.exmroll NOT IN(SELECT DISTINCT sm.exroll FROM stu_marks sm WHERE sm.qid IN(SELECT qid FROM question q WHERE q.oid IN(SELECT oid FROM course_outcome co,course c WHERE c.CID=co.cid AND c.CID='$cid')))";
+            $year=$_GET['year'];
+            $sql="SELECT s.exmroll,CID FROM stu_info s, course c WHERE s.ssem=c.sem AND c.CID='$cid' AND s.exmroll NOT IN(SELECT DISTINCT sm.exroll FROM stu_marks sm WHERE sm.qid IN(SELECT qid FROM question q WHERE q.oid IN(SELECT oid FROM course_outcome co,course c WHERE c.CID=co.cid AND c.CID='$cid' AND co.year='$year' )))";
             $result=$conn->query($sql);
             while($row=$result->fetch_assoc()){?>
                 <option value="<?php

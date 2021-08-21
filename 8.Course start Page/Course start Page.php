@@ -35,11 +35,11 @@ $email=$_GET['email'];
     </div> 
     <div id="mySidebar" class="sidebar  ">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-      <a href="D:\Mini Project\7.Faculty Member Home Page\FacMemHome.html">Home</a>
+      <a href="../7.Faculty Member Home Page\FacMemHome.php">Home</a>
       <a href="#">Notification</a>
-      <a href="D:\Mini Project\9.Course_Course_outcome page\Course_Course_outcome page.html">Set Course Outcome</a>
-      <a href="#">Question Paper</a>
-      <a href="#">Student Scores</a>
+      <a href="../9.Course_Course_outcome page\Course_Course_outcome page.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Set Course Outcome</a>
+      <a href="../10.Course_QuestionPaper\Course_Question_paper.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Question Paper</a>
+      <a href="../11.1.Course_Student_score_page\Course_Student_score_page.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Student Scores</a>
       <a href="#">Results</a>
       
       <a href="#">Contact</a>
@@ -156,6 +156,47 @@ $email=$_GET['email'];
 </div>    
 
 <!--End Question Paper-->
+
+<div class="row container-fluid">
+  <div class="col-md-7 sub " >
+    <h2 class="heading3" >Student Score</h2>
+  </div>
+
+  
+</div>
+
+<!--student performance-->
+<div class="syllabus" >
+  <div class="card">
+    <div class="card-body">
+     <span> <?php
+        $cid=$_GET['id'];
+        $year=$_GET['year'];
+        $sql2="SELECT DISTINCT sm.exroll FROM stu_marks sm,question q WHERE sm.qid=q.qid AND sm.qid IN(SELECT qid FROM question q WHERE q.oid IN(SELECT oid FROM course_outcome co, course c WHERE c.CID=co.cid AND c.CID='$cid' AND co.year='$year'))";
+        
+       
+        $result2=$conn->query($sql2);
+        while($row2=$result2->fetch_assoc()){
+          $examroll=$row2['exroll'];?>
+          <h4>Examination Roll :<?php echo $row2['exroll'];?></h4>
+          <?php
+           $sql="SELECT DISTINCT sm.marks,q.qnum FROM stu_marks sm,question q WHERE sm.exroll='$examroll' AND sm.qid=q.qid AND sm.qid IN(SELECT qid FROM question q WHERE q.oid IN(SELECT oid FROM course_outcome co, course c WHERE c.CID=co.cid AND c.CID='$cid' AND co.year='$year'))";
+           $result=$conn->query($sql);
+        while($row=$result->fetch_assoc()){?>
+          
+          
+          <label style="padding:1rem 2rem;" for="">Question No. : <b><?php echo $row['qnum']; ?> </b>    Marks :<i><b><?php echo $row['marks']; ?></b></i></label>
+          
+       <?php }?> <hr> <?php }?>
+       
+      </span>
+      
+    </div>
+  </div>
+</div> 
+
+
+<!--End Student performance-->
 
 
   
