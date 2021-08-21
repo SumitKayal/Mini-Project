@@ -1,0 +1,143 @@
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #c8d8e4;
+  }
+/* NavBar style*/
+.Profile_img{
+    width :45px;
+    height:45px;
+    border-radius: 2rem;
+}
+
+.UnivLogo{
+    height: 2rem ;
+    margin-left: 1rem;
+    border-radius: 20%;
+}
+  
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:rgba(0,0,0,0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0.5rem;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+  
+  
+  /*End NavBar style*/
+
+
+  /*Heading Block*/
+  .headingBlock{
+      margin: 7rem 4rem 1rem;
+      border-radius: 2rem;
+      background-image: url("https://cdn.pixabay.com/photo/2019/08/21/16/18/laptop-4421417_960_720.jpg");
+  }
+
+  .headingBlock_h1{
+    padding: 2rem 2rem 12rem;
+    color: white;
+  }
+  /*End Heading Block*/
+
+  /*course assign block*/
+
+.heading3{
+  text-shadow: 0 0 5px rgb(28, 2, 90);
+  color:white;
+  
+  
+}
+
+  .sub{
+    margin-left:4rem;
+  }
+  .selectYear{
+    padding-top: 0.35rem;
+  }
+  @media(max-width:768px){
+    .sub{
+      text-align: center;
+      margin-left:0;
+    }
+  }
+  /*end course assign block*/
+
+  /*Courses*/
+
+.course{
+  margin : 2% 12% 1%;
+  
+}
+.card{
+  border-radius: 1rem;
+  
+  border:none;
+  
+}
+.card:hover{
+  background-color: rgba(21, 169, 228, 0.3);
+}
+
+a.cardAnchorTag:hover{
+  text-decoration: none;
+  color:white;
+  
+
+}
+a.cardAnchorTag{
+  color: rgb(45, 45, 248);
+}
+ /*End Courses*/

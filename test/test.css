@@ -1,0 +1,40 @@
+body{
+  background-color: #dff4fa ;
+}
+
+
+.card-title{
+  background-color: #6696ff;
+  border-radius: 2rem;
+}
+.card{
+   border-radius: 2rem;
+ 
+}
+
+.form-control{
+   background-color: rgb(255, 255, 246);
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+}
+.card-registration .select-arrow {
+  top: 13px;
+}
+
+.headReg{
+  padding-top: 2rem;
+  padding-left: 1rem;
+}
+.col{
+  padding-top: 5rem;
+}
+
+.UnivLogo{
+  height: 2rem ;
+  border-radius: 20%;
+}

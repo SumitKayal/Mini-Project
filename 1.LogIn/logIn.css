@@ -1,0 +1,23 @@
+body{
+    background-color: #dff4fa ;
+}
+
+
+#logInId{
+    background-color: rgb(255, 255, 246);
+}
+
+#passwordId{
+    background-color: rgb(255, 255, 246);
+}
+
+.col{
+    padding:2rem;
+}
+
+
+
+.UnivLogo{
+    height: 2rem ;
+    border-radius: 20%;
+}
