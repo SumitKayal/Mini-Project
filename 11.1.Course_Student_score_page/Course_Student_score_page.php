@@ -1,3 +1,18 @@
+<?php
+ session_start();
+ include ('../config.php');
+ if($_SESSION['email']==""){
+  header("Location: ../1.LogIn/logIn.html");
+  exit();
+}
+$email=$_GET['email'];
+
+ ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +59,9 @@
 
 <!--Heading Block background-->
 <div class="headingBlock">
-  <h1 class="headingBlock_h1">Course Code : <span class="courseCode">CSCL-504</span></h1>
+  <h1 class="headingBlock_h1">Course Code : <span class="courseCode">
+  <span class="courseCode"><?php echo $_GET['id']; ?>
+  </span></h1>
   <div class="anchorHeadingBlock">
   
 </div>
@@ -65,47 +82,57 @@
 
 <!--Syllabus-->
 <div class="syllabus">
-  <form action="">
+  <form action="studentCourseBcakend.php" method="POST" >
   <div class="card">
     <div class="card-head" style="padding: 2rem;">
-      <label for="">Student Name    :</label>
-      <input type="text"><br>
       <label for="">Examination Roll:</label>
-      <input type="text">
+      <select class="select form-control-sm" id="exroll" name="exroll">
+        <?php
+            $cid=$_GET['id'];
+            $sql="SELECT s.exmroll,CID FROM stu_info s, course c WHERE s.ssem=c.sem AND c.CID='$cid' AND s.exmroll NOT IN(SELECT DISTINCT sm.exroll FROM stu_marks sm WHERE sm.qid IN(SELECT qid FROM question q WHERE q.oid IN(SELECT oid FROM course_outcome co,course c WHERE c.CID=co.cid AND c.CID='$cid')))";
+            $result=$conn->query($sql);
+            while($row=$result->fetch_assoc()){?>
+                <option value="<?php
+                 echo $row['exmroll'];
+                  ?>"><?php echo $row['exmroll'];?></option>
+                  <?php
+
+         }?>
+                            
+                            
+      </select>
+      
+
+      
     </div>
     <div class="card-body" style="text-align: center;">
+    <?php
+    $year=$_GET['year'];
+      $sql="SELECT qid,qnum,fullmarks ,q.oid, year, cid FROM question q,course_outcome co WHERE q.oid=co.oid AND co.cid='$cid' AND co.year='$year' ORDER BY q.qnum";
+      $result=$conn->query($sql);
+    
+      while($row=$result->fetch_assoc()){ 
+        
+    ?>
+        <input type="hidden" name="course_id" id="course_id" value="<?php echo $cid?>">
+        <input type="hidden" name="year" id="year" value="<?php echo $year?>">
+        
+          <label for=""><h4><?php echo $row['qnum'].". " ; ?>   </h4>   </label>
+          <input type="number" 
+                  name="<?php echo $row['qid']; ?>" 
+                  id="<?php echo $row['qid']; ?>" 
+                  step="0.1"
+                  max=<?php echo $row['fullmarks'];?>
+                  min=0
+                  style="width:30%;"
+                  placeholder=" full marks :<?php echo $row['fullmarks'];?>"/>
+          
       
-        <label for="">1.a</label>
-        <input type="text"/>
-        <label for="">1.b</label>
-        <input type="text"/>
-        <label for="">1.c</label>
-        <input type="text"/><br>
-        <label for="">2.a</label>
-        <input type="text"/>
-        <label for="">2.b</label>
-        <input type="text"/>
-        <label for="">2.c</label>
-        <input type="text"/><br>
-        <label for="">3.a</label>
-        <input type="text"/>
-        <label for="">3.b</label>
-        <input type="text"/>
-        <label for="">3.c</label>
-        <input type="text"/><br>
-        <label for="">4.a</label>
-        <input type="text"/>
-        <label for="">4.b</label>
-        <input type="text"/>
-        <label for="">4.c</label>
-        <input type="text"/><br>
-        <label for="">5.a</label>
-        <input type="text"/>
-        <label for="">5.b</label>
-        <input type="text"/>
-        <label for="">5.c</label>
-        <input type="text"/><br>
-        <input type="submit">
+        
+
+    <?php } ?>
+        <br>
+        <input class="btn btn-outline-info" style="margin-top:1rem;" type="submit">
       </form>
       </form>
     </div>

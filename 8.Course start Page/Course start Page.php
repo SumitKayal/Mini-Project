@@ -61,7 +61,7 @@ $email=$_GET['email'];
   <div class="anchorHeadingBlock">
   <a class="anchorHB" href="../9.Course_Course_outcome page\Course_Course_outcome page.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Set Course Outcome</a>
   <a class="anchorHB" href="../10.Course_QuestionPaper\Course_Question_paper.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Question Paper</a>
-  <a class="anchorHB" href="#3">Student Score</a>
+  <a class="anchorHB" href="../11.1.Course_Student_score_page\Course_Student_score_page.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Student Score</a>
   <a class="anchorHB" href="#3">Result</a>
 </div>
 </div>

@@ -10,4 +10,6 @@ function openNav() {
     document.getElementById("main").style.marginLeft= "0";
   }
 
+
+  
 /*End Navbar Function*/
