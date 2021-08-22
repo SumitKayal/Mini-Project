@@ -30,10 +30,12 @@ if(isset($_POST)){
  
 
  ?>
-
 <script type="text/javascript"> 
 	alert('marks inserted successfully'); 
-	window.location.href = "Course_Student_score_page.php?id="+<?php echo $cid; ?>+"&year="+<?php echo $year; ?>;
-</script>
+    <?php
+	 header("refresh:1; url=Course_Student_score_page.php?id=". $cid ."&year=".$year) ;
+    ?>
+
+    </script>
  
  

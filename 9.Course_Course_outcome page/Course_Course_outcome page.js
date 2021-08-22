@@ -45,6 +45,7 @@ function addco(){
   var in1=document.createElement("input");
   in1.setAttribute("class","form-control");
   in1.setAttribute("name",coText);
+  in1.setAttribute("required","required");
 
   div2.appendChild(in1);
 

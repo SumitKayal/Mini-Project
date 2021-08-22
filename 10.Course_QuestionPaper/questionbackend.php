@@ -4,30 +4,34 @@
     $year=$_GET['year'];
     $cid=$_GET['id'];
 
-    $numQ=$_POST['numQ'];
-    for($x=1;$x<=$numQ;$x++){
+    //$numQ=array($_POST['numQ'],$_POST['numQ'],$_POST['numQ'])
 
-        $qnum=$x;
-        $v="courseCode".$x;
+    $numQ[0]=$_POST['numQ1'];
+    $numQ[1]=$_POST['numQ2'];
+    $numQ[2]=$_POST['numQ3'];
+    for($y=0;$y<=2;$y++){
+
+    for($x=1;$x<=$numQ[$y];$x++){
+
+        $qnum=($y+1).".".$x;
+        $v="courseCode".($y+1)."".$x;
         
         $coname=$_POST[$v];
 
-        $qt="q".$x;
+        $qt="q".($y+1)."".$x;
         $qtext=$_POST[$qt];
-        $fm="fm".$x;
+        $fm="fm".($y+1)."".$x;
         $fmarks=$_POST[$fm];
 
-        $sql="SELECT oid FROM course_outcome WHERE year='$year' AND cid='$cid' AND outcomeName='$coname'";
-        $result=$conn->query($sql);
-        if($result->num_rows==1){
-            $oid=$result->fetch_assoc()['oid'];
-            $sql1="INSERT INTO question (qnum,qtext,oid,fullmarks) VALUES ('$qnum','$qtext','$oid','$fmarks')";
+        //echo  $qtext."\t\t". $fmarks."\t\t". $coname.",,,,,";
+
+            $sql1="INSERT INTO question (qnum,qtext,oid,fullmarks) VALUES ('$qnum','$qtext','$coname','$fmarks')";
             $conn->query($sql1);
 
             
-        }
 
     }
+}
     header("Location: ../8.Course start Page\Course start Page.php?id=".$cid."&year=".$year);
 
 ?>

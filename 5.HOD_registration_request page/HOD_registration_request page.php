@@ -66,7 +66,7 @@
     <div class="anchorHeadingBlock">
     <a class="anchorHB" href="HOD_registration_request page.php">Registration Request</a>
     <a class="anchorHB" href="../4.1.HOD_assign_courses page\HOD_assign_courses page.php">Assign Courses</a>
-    <a class="anchorHB" href="D:\Mini Project\6.HOD_courses page\HOD_courses page.html">Courses Details</a>
+    <a class="anchorHB" href="../6.HOD_courses page\HOD_courses page.php">Courses Details</a>
   </div>
 </div>
 
@@ -145,7 +145,7 @@
     </div>
       </div>
          <div class="col-md-1">
-           <a href="../4.HOD_assign_courses page\HOD_assign_courses page.php?id=<?php echo $row['Email']; ?>">
+           <a href="accept.php?id=<?php echo $row['Email']; ?>">
           <i class="fas fa-check fa-3x fontAw right "></i>
         </a>
     </div>

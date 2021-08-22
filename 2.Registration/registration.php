@@ -106,10 +106,10 @@
                       <small id="emailMassage"></small>
                     </div>
                     <div class="col-md-4 pe-5">
-                      <label for="">Type</label>
+                      <label for="">Faculty</label>
                       <select name="type" id="">
-                        <option value="Faculty">Faculty</option>
-                        <option value="Guest">Guest</option>
+                        <option value="Faculty">Regular Faculty</option>
+                        <option value="Guest">Guest Faculty</option>
                       </select>
                       
                     </div>

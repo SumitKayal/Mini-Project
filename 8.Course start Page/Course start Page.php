@@ -57,7 +57,16 @@ $email=$_GET['email'];
 
 <!--Heading Block background-->
 <div class="headingBlock">
-  <h1 class="headingBlock_h1">Course Code : <span class="courseCode"><?php echo $_GET['id']; ?></span></h1>
+  <?php
+        $cid=$_GET['id'];
+        $sql="SELECT CourseName,credit,fullmarks FROM course WHERE CID='$cid'";
+        $result=$conn->query($sql);
+        $row1=$result->fetch_assoc();
+  
+  ?>
+<h1 class="headingBlock_h1" style="padding-bottom:0rem;">Course Name : <?php echo $row1['CourseName'];?></h1>
+  <h4 class="headingBlock_h1" style="padding-bottom:0rem;">Course Code : <span class="courseCode"><?php echo $_GET['id']; ?></span></h4>
+  <h5 class="headingBlock_h1" style="padding-bottom:5rem;">Credit : <?php echo $row1['credit'];?>, Full Marks : <?php echo $row1['fullmarks'];?></h5>
   <div class="anchorHeadingBlock">
   <a class="anchorHB" href="../9.Course_Course_outcome page\Course_Course_outcome page.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Set Course Outcome</a>
   <a class="anchorHB" href="../10.Course_QuestionPaper\Course_Question_paper.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Question Paper</a>
