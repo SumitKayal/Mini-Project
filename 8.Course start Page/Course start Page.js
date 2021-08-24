@@ -11,3 +11,9 @@ function openNav() {
   }
 
 /*End Navbar Function*/
+
+var p=document.getElementById("ptype").innerHTML;
+
+if(p=="HOD"){
+  document.getElementById('home').href="../HODhome.php";
+}

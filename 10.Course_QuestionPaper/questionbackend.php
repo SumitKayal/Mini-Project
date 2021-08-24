@@ -4,6 +4,8 @@
     $year=$_GET['year'];
     $cid=$_GET['id'];
 
+    $qtype=$_POST['qtype'];
+
     //$numQ=array($_POST['numQ'],$_POST['numQ'],$_POST['numQ'])
 
     $numQ[0]=$_POST['numQ1'];
@@ -24,10 +26,14 @@
         $fmarks=$_POST[$fm];
 
         //echo  $qtext."\t\t". $fmarks."\t\t". $coname.",,,,,";
-
-            $sql1="INSERT INTO question (qnum,qtext,oid,fullmarks) VALUES ('$qnum','$qtext','$coname','$fmarks')";
+        
+            $sql1="INSERT INTO ".$qtype." (qnum,qtext,oid,fullmarks) VALUES ('$qnum','$qtext','$coname','$fmarks')";
             $conn->query($sql1);
-
+        
+       /* else if($qtype=="midterm"){
+            $sql2="INSERT INTO mid_question (mqnum,mqtext,oid,fullmarks) VALUES ('$qnum','$qtext','$coname','$fmarks')";
+            $conn->query($sql2);
+        }*/
             
 
     }

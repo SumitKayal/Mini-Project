@@ -39,14 +39,14 @@ function validateEmail(input, requiredMsg, invalidMsg) {
 	return true;
 }
 
-const form = document.querySelector("#signup");
+//const form = document.querySelector("#signup");
 
 const NAME_REQUIRED = "Please enter your name";
 const ADD_REQUIRED = "Please enter your address";
 const EMAIL_REQUIRED = "Please enter your email";
 const EMAIL_INVALID = "Please enter a correct email address format";
 
-form.addEventListener("submit", function (event) {
+/*form.addEventListener("submit", function (event) {
 	// stop form submission
 	event.preventDefault();
 
@@ -58,10 +58,10 @@ form.addEventListener("submit", function (event) {
 		document.getElementById("ffileMassage").innerHTML="Please upload your CV";
 	}
 	// if valid, submit the form.
-	else */if (nameValid && emailValid && addressValid) {
+	else if (nameValid && emailValid && addressValid) {
 		form.submit();
 	}
-});
+});*/
 
 
 

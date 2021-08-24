@@ -24,7 +24,8 @@
     <!--Navbar-->
     <nav class="shadow p-3 mb-5 bg-body rounded navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="D:\Mini Project\1.LogIn\logIn.html"><img class="UnivLogo " src="Image/univLogo.png" alt="univLogo">   University of Calcutta</a>
+          <a class="navbar-brand" href="../1.LogIn\logIn.html"><img class="UnivLogo " src="Image/univLogo.png" alt="univLogo">
+             University of Calcutta</a>
         </div>
       </nav>
 
@@ -53,7 +54,7 @@
                     </div>
                     <div class="col-md-9 pe-5">
       
-                      <input type="text" id="name" name="name"  class="form-control form-control-lg" /><br>
+                      <input type="text" id="name" name="name"  class="form-control form-control-lg" required/><br>
                       <small id="nameMassage"></small>
       
                     </div>
@@ -69,7 +70,7 @@
                     </div>
                     <div class="col-md-4 pe-5  ">
       
-                      <input type="date" name="dob" class="form-control form-control-lg" />
+                      <input type="date" name="dob" class="form-control form-control-lg" required/>
                       
       
                     </div>
@@ -79,8 +80,8 @@
         
                       </div>
                       <div class="col-md-3 pe-5">
-                        <select class="select form-control-md" name="gender">
-                            <option value="1" disabled>Choose option</option>
+                        <select class="select form-control-md" name="gender"  required>
+                            <option value="" >Choose option</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Others">Others</option>
@@ -101,13 +102,14 @@
                     </div>
                     <div class="col-md-5 pe-5">
       
-                      <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="example@example.com" />
+                      <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="example@example.com" required/>
                       <br>
                       <small id="emailMassage"></small>
                     </div>
                     <div class="col-md-4 pe-5">
                       <label for="">Faculty</label>
-                      <select name="type" id="">
+                      <select name="type" id="" required>
+                        <option value="">Type</option>
                         <option value="Faculty">Regular Faculty</option>
                         <option value="Guest">Guest Faculty</option>
                       </select>
@@ -124,7 +126,8 @@
       
                     </div>
                     <div class="col-md-6 pe-5 pb-5">
-                        <select class="select form-control-sm" id="c1" name="course1">
+                        <select class="select form-control-sm" id="c1" name="course1" required>
+                          <option value="">--Select--</option>
                             <?php
                               $sql="SELECT CID,CourseName FROM Course";
                               $result=$conn->query($sql);
@@ -147,7 +150,8 @@
         
                       </div>
                       <div class="col-md-6 pe-5 pb-5">
-                          <select class="select form-control-sm" id="c2" name="course2">
+                          <select class="select form-control-sm" id="c2" name="course2" required>
+                          <option value="">--Select--</option>
                           <?php
                               $sql="SELECT CID,CourseName FROM Course";
                               $result=$conn->query($sql);
@@ -168,7 +172,8 @@
         
                       </div>
                       <div class="col-md-6 pe-5 pb-5">
-                          <select class="select form-control-sm" id="c3" name="course3">
+                          <select class="select form-control-sm" id="c3" name="course3"required>
+                          <option value="">--Select--</option>
                           <?php
                               $sql="SELECT CID,CourseName FROM Course";
                               $result=$conn->query($sql);

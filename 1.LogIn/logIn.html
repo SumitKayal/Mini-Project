@@ -39,21 +39,27 @@
 					<div class="card-body p-4 p-lg-5 text-black">
 	  
 					  <form action="logIn.php" method="post" >
+						  
 	  
 						<div class="d-flex align-items-center mb-3 pb-1">
 						  
 						  <span class="h1 fw-bold mt-2 mb-0">Log In</span>
 						</div>
 	  
-						<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
-						<small id="errorMassage"></small>
+						<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account  
+							<select class="form-select form-select-sm" name="type" id="type">
+							<option value="">--select--</option>
+							<option value="prof">Professor</option>
+							<option value="stu">Student</option>
+						</select></h5>
+						
 						<div class="form-outline mb-4">
-						  <input type="email" id="logInId" name="logInId" class="form-control form-control-lg" />
+						  <input type="text" id="logInId" name="logInId" class="form-control form-control-lg" required/>
 						  <label class="form-label" for="form2Example17">Username</label>
 						</div>
 	  
 						<div class="form-outline mb-4">
-						  <input type="password" id="passwordId" name="passwordId" class="form-control form-control-lg" />
+						  <input type="password" id="passwordId" name="passwordId" class="form-control form-control-lg" required/>
 						  <label class="form-label" for="form2Example27">Password</label>
 						</div>
 	  
@@ -63,6 +69,7 @@
 	  
 						<a class="small text-muted" href="#!"></a>
 						<p class="mt-5 mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="../2.Registration/registration.php" style="color: #393f81;">Register here</a></p>
+						
 						<a href="#!" class="small text-muted">Terms of use.</a>
 						<a href="#!" class="small text-muted">Privacy policy</a>
 					  </form>

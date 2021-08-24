@@ -40,17 +40,16 @@
     </div> 
     <div id="mySidebar" class="sidebar  ">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-      <a href="D:\Mini Project\7.Faculty Member Home Page\FacMemHome.html">Home</a>
-      <a href="#">Notification</a>
-      <a href="#">Course Outcome</a>
-      <a href="#">Question Paper</a>
-      <a href="#">Student Scores</a>
+      <a href="../8.Course start Page\Course start Page.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Home</a>
+      <a href="../9.Course_Course_outcome page\Course_Course_outcome page.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Set Course Outcome</a>
+      <a href="../10.Course_QuestionPaper\Course_Question_paper.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Question Paper</a>
+      <a href="../11.1.Course_Student_score_page\Course_Student_score_page.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Student Scores</a>
       <a href="#">Results</a>
       
       <a href="#">Contact</a>
       <a href="../logOut.php">Log Out</a>
     </div>
-    <a class="navbar-brand" href="D:\Mini Project\7.Faculty Member Home Page\FacMemHome.html">
+    <a class="navbar-brand" href="../8.Course start Page\Course start Page.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">
         <img class="UnivLogo " src="Image/univLogo.png" alt="univLogo">
            University of Calcutta</a>
   
@@ -76,7 +75,7 @@
   <div class="anchorHeadingBlock">
   <a class="anchorHB" href="../9.Course_Course_outcome page\Course_Course_outcome page.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Set Course Outcome</a>
   <a class="anchorHB" href="../10.Course_QuestionPaper\Course_Question_paper.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Question Paper</a>
-  <a class="anchorHB" href="#3">Student Score</a>
+  <a class="anchorHB" href="../11.1.Course_Student_score_page\Course_Student_score_page.php?id=<?php echo $_GET['id'] ; ?>&year=<?php echo $_GET['year'];?>">Student Score</a>
   <a class="anchorHB" href="#3">Result</a>
 </div>
 </div>
@@ -84,12 +83,21 @@
 <!--End Heading Blobk Background-->
 
 <!--Syllabus heading block-->
+<form action="questionbackend.php?id=<?php echo $_GET['id'];?>&year=<?php echo $_GET['year'];?>" method="POST" >
  <div class="row container-fluid">
   <div class="col-md-5 sub " >
     <h2 class="heading3" >Question Paper</h2>
     <p id="massage" style="padding-left: 5rem;color:red;color:red;"></p>
   </div>
+  <div class="col-md-5 sub " style="margin-top:3rem;margin-left:2rem;" >
+    <select class="form-select" name="qtype" id="qtype" required>
+      <option value="">Select Exam type</option>
+      <option value="question">University Examination</option>
+     <option value="mid_question">Internal Examination</option>
 
+  </select>
+
+  </div>
   
 </div>
 
@@ -97,7 +105,8 @@
 
 <!-- Course Outcome-->
 
-<form action="questionbackend.php?id=<?php echo $_GET['id'];?>&year=<?php echo $_GET['year'];?>" method="POST" >
+
+
 
 <div class="profile" id="frm" >
   <h1 style="background-color:#8ca7d1"><b style="padding:1rem;">1.</b></h1>
@@ -338,7 +347,7 @@
 
 
 
-<div class=" d-grid gap-2 d-md-flex justify-content-md-end" style="padding: 3rem 10rem;">
+<div class=" d-grid gap-2 col-6 mx-auto" style="padding: 3rem 10rem;">
   <button class="btn btn-primary" type="submit">Submit</button>
 </div>  
 

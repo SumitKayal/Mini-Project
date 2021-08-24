@@ -13,6 +13,7 @@ $address=$_POST['address'];
 $cv=$_POST['cv'];
 
 
+
 $sql="INSERT INTO professor (Email, Name, Type, dob, Gender)
          VALUES ('$email', '$name', '$type', '$dob', '$gender')";
  
