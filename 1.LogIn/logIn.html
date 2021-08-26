@@ -6,8 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- CSS only -->
 	<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
 <link rel="stylesheet" href="logIn.css">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>	
@@ -15,7 +17,7 @@
 </head>
 <body>
 	<!--NavBar-->
-		<nav class="shadow p-3 mb-5 bg-body rounded navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+		<nav class="shadow p-3 mb-5 rounded navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
 		  <div class="container-fluid">
 			<a class="navbar-brand" href="D:\Mini Project\1.LogIn\logIn.html"><img class="UnivLogo " src="Image/univLogo.png" alt="univLogo">   University of Calcutta</a>
 		  </div>
@@ -46,12 +48,13 @@
 						  <span class="h1 fw-bold mt-2 mb-0">Log In</span>
 						</div>
 	  
-						<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account  
-							<select class="form-select form-select-sm" name="type" id="type">
-							<option value="">--select--</option>
-							<option value="prof">Professor</option>
-							<option value="stu">Student</option>
-						</select></h5>
+						<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account  </h5>
+							<select class="form-select form-select-sm mb-3" name="type" id="type" required>
+								<option value="">are you a student or professor..?</option>
+								<option value="prof">Professor</option>
+								<option value="stu">Student</option>
+							</select>
+						
 						
 						<div class="form-outline mb-4">
 						  <input type="text" id="logInId" name="logInId" class="form-control form-control-lg" required/>
