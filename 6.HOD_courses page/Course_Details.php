@@ -63,7 +63,7 @@ $email=$_SESSION['email'];
   <h1 style="padding-top:1rem;padding-left:2rem;">Course Name : <?php echo $row['CourseName'];?></h1>
   <h2 class="headingBlock_h1" style="padding-bottom:5rem;">Course Code : <span class="courseCode"><?php echo $_GET['id']; ?></span></h2>
   <a class="headingBlock_h1" style="padding-bottom:5rem;color:blue;" href="../8.Course start Page\test.php?id=<?php echo $_GET['id'];?>&year=<?php echo $_GET['year'];?>">
-  Course Outcome Assesment</a>
+  Course Outcome Attainment</a>
 </div>
 
 <!--End Heading Blobk Background-->

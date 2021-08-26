@@ -13,3 +13,25 @@ function openNav() {
 
   
 /*End Navbar Function*/
+
+
+
+
+
+  function showES(){
+    
+    document.getElementById("es").removeAttribute("hidden");
+    document.getElementById("ia").setAttribute("hidden",true);
+    document.getElementById("esbutton").setAttribute("disabled","disabled");
+    document.getElementById("iabutton").removeAttribute("disabled");
+    document.getElementById("esbutton").setAttribute("class","btn btn-info btn-sm");
+    
+  }
+
+  function showIA(){
+    document.getElementById("ia").removeAttribute("hidden");
+    document.getElementById("es").setAttribute("hidden",true);
+    document.getElementById("iabutton").setAttribute("disabled","disabled");
+    document.getElementById("esbutton").removeAttribute("disabled");
+    document.getElementById("iabutton").setAttribute("class","btn btn-info btn-sm");
+  }
