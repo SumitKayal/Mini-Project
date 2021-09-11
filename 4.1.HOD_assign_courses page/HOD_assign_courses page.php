@@ -7,6 +7,7 @@
   header("Location: 1.LogIn/logIn.html");
   exit();
 }
+$year=date("Y");
  ?>
 
 
@@ -110,7 +111,7 @@
           <select class="select form-control-sm" id="c1" name="course1">
             <option value="selcourse">Select Course</option>
                             <?php
-                              $sql="SELECT CID,CourseName FROM Course";
+                              $sql="SELECT CID,CourseName FROM Course WHERE CID NOT IN(SELECT course_id from assign_course where year='$year')";
                               $result=$conn->query($sql);
                               while($row=$result->fetch_assoc()){?>
                                 <option value="<?php
@@ -126,7 +127,7 @@
                         <select class="select form-control-sm" id="c2" name="course2">
                         <option value="selcourse">Select Course</option>
                             <?php
-                              $sql="SELECT CID,CourseName FROM Course";
+                              $sql="SELECT CID,CourseName FROM Course WHERE CID NOT IN(SELECT course_id from assign_course where year='$year')";
                               $result=$conn->query($sql);
                               while($row=$result->fetch_assoc()){?>
                                 <option value="<?php
@@ -143,7 +144,7 @@
                         <select class="select form-control-sm" id="c3" name="course3">
                         <option value="selcourse">Select Course</option>
                             <?php
-                              $sql="SELECT CID,CourseName FROM Course";
+                              $sql="SELECT CID,CourseName FROM Course WHERE CID NOT IN(SELECT course_id from assign_course where year='$year')";
                               $result=$conn->query($sql);
                               while($row=$result->fetch_assoc()){?>
                                 <option value="<?php
@@ -170,7 +171,7 @@
             <select class="form-select form-control-lg mb-3" name="prof" id="prof">
             <option value="selprof">Select Professor</option>
           <?php 
-                 $sql="SELECT Email, Name FROM professor WHERE Password IS NOT NULL";
+                 $sql="SELECT professor."."Email,professor.Name FROM professor WHERE (professor.Email NOT IN(SELECT email FROM assign_course WHERE assign_course.year='$year') OR professor.Email IN (SELECT email FROM assign_course GROUP BY email HAVING COUNT(email) < 3 )) AND  Password IS NOT NULL";
                  $result=$conn->query($sql);
                  while($row=$result->fetch_assoc()){?>
 
