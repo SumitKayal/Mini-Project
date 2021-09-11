@@ -25,9 +25,10 @@ $email=$_GET['email'];
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="Course_Student_score_page.css">
 
+
     <title>Student Score</title>
 </head>
-<body>
+<body >
    <!--Navbar-->
   <nav class="shadow p-3 mb-5 bg-body rounded navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
     
@@ -98,7 +99,7 @@ $email=$_GET['email'];
 
 <!--student score-->
 <div class="syllabus" id="es" hidden>
-  <form action="studentCourseBcakend.php" method="POST" >
+  <form  method="POST" >
     <div class="card">
       <div class="card-head" style="padding: 2rem;">
         <div class="row">
@@ -110,7 +111,7 @@ $email=$_GET['email'];
           </div>
           <div class="col-md-4">
             <label for="">Examination Roll:</label>
-            <select class="select form-control-sm" id="exroll" name="exroll">
+            <select class="select form-control-sm" id="exroll1" name="exroll">
             <?php
             $cid=$_GET['id'];
             $year=$_GET['year'];
@@ -172,7 +173,7 @@ $email=$_GET['email'];
 
 <!---->
 <div class="syllabus" id="ia" hidden>
-  <form action="studentCourseBcakend.php" method="POST" >
+  <form  method="POST"   id="secondForm">
     <div class="card">
       <div class="card-head" style="padding: 2rem;">
         <div class="row">
@@ -183,9 +184,10 @@ $email=$_GET['email'];
 
           </div>
           
-          <div class="col-md-4">
+          <div class="col-md-4" style="text-align:center;">
             <label for="">Examination Roll:</label>
-            <select class="select form-control-sm" id="exroll" name="exroll">
+            
+            <select class="select form-control-sm" id="exroll2" name="exroll">
             <?php
             $sql="SELECT s.exmroll,CID FROM stu_info s, course c WHERE s.ssem=c.sem AND c.CID='$cid' AND s.exmroll NOT IN(SELECT DISTINCT smm.exroll FROM stu_midmarks smm WHERE smm.qid IN(SELECT mq.qid FROM mid_question mq WHERE mq.oid IN(SELECT oid FROM course_outcome co,course c WHERE c.CID=co.cid AND c.CID='$cid' AND co.year='$year' )))";
             $result=$conn->query($sql);
@@ -196,6 +198,7 @@ $email=$_GET['email'];
             <?php
               }?>        
             </select>
+            <!--massage--><label  ><p id="massage" style="color:#36a4ff"> </p></label>
           </div>
           <div class="col-md-4">
 
@@ -234,7 +237,7 @@ $email=$_GET['email'];
         <br>
         <input type="hidden" name="examtype" id="examtype" value="ia">
         <div class="d-grid gap-2 col-4 mx-auto">
-          <input class="btn btn-outline-danger" style="margin-top:1rem;" type="submit">
+          <button class="btn btn-outline-danger" type="submit" style="margin-top:1rem;" >Submit</button>
         </div>
         
       </div>
@@ -249,7 +252,44 @@ $email=$_GET['email'];
 
   
 
-          
+ <script>
+   window.addEventListener("load",function(){
+     function insertData(){
+       let XHR = new XMLHttpRequest();
+       const fd=new FormData(form2);
+       XHR.onload=function(){
+        var massage=document.getElementById("massage");
+        massage.innerHTML="Marks successfully inserted";
+        setTimeout(function(){ 
+                              selectOption();
+                              form2.reset();
+                              massage.innerHTML=""; }, 2000);
+        
+      };
+       XHR.open("POST","studentCourseBcakend.php",true);
+       XHR.send(fd);
+      }
+      const form2=document.getElementById("secondForm");
+      form2.addEventListener("submit",function(event){
+        event.preventDefault();
+        insertData();
+      })
+      
+       function selectOption(){
+        
+        var list=document.getElementById("exroll2");
+        var i=0;
+        
+     
+        while(list.childNodes[i++].value!=list.value);
+          list.removeChild(list.childNodes[--i]);
+        
+      }
+   })
+
+  
+   
+</script>         
     
 <script src="Course_Student_score_page.js" charset="utf-8"></script>
 </body>

@@ -7,7 +7,7 @@
 }
 $email=$_SESSION['email'];
 
-
+echo "thi";
 
 if(isset($_POST)){
     $cid=$_POST['course_id'];
@@ -34,17 +34,18 @@ if(isset($_POST)){
         $conn->query($sql2);
 
     }
+    
 }
 
  
 
  ?>
-<script type="text/javascript"> 
+<!--<script type="text/javascript"> 
 	alert('marks inserted successfully'); 
     <?php
-	 header("refresh:1; url=Course_Student_score_page.php?id=". $cid ."&year=".$year) ;
+	 //header("refresh:1; url=Course_Student_score_page.php?id=". $cid ."&year=".$year) ;
     ?>
 
-</script>
+</script>-->
  
  
