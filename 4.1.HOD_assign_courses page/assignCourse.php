@@ -28,7 +28,7 @@ if($course3!="selcourse") {
 
 
 
-header("Location: ../HODhome.php");
+header("Location: HOD_assign_courses page.php");
 
 exit();
 
