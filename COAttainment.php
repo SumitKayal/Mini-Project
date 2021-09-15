@@ -1,13 +1,10 @@
 <?php
 
-include('../config.php');
+include('config.php');
 
 $id = $_GET['id'];
 $year = $_GET['year'];
-$fname = $id . ".xls";
 
-header("Content-type: application/vnd.ms-excel");
-header("Content-Disposition: attachment; filename=" . $fname);
 $sql = "SELECT CourseName FROM course WHERE CID='$id'";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();

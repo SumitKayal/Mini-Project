@@ -49,7 +49,7 @@ $email = $_GET['email'];
             <a href="#">Results</a>
 
             <a href="#">Contact</a>
-            <a href="logOut.php">Log Out</a>
+            <a href="..\logOut.php">Log Out</a>
         </div>
         <a class="navbar-brand" href="../8.Course start Page\Course start Page.php?id=<?php echo $_GET['id']; ?>&year=<?php echo $_GET['year']; ?>">
             <img class="UnivLogo " src="Image/univLogo.png" alt="univLogo"> University of Calcutta</a>
