@@ -21,17 +21,21 @@ $resultMidQuestionCountCo = $conn->query($countMidQuestionCo);
 $rowMidQuestionCountCo = $resultMidQuestionCountCo->fetch_assoc();
 ?>
 <table border='1'>
-  <tr>
-    <th>
-      Examination Roll No.
-    </th>
-    <th colspan="<?php echo $rowMidQuestionCountCo['COUNT(DISTINCT co.oid)'] ?>">
-      Internal Assesment
-    </th>
-    <th colspan="<?php echo $rowEndQuestionCountCo['COUNT(DISTINCT co.oid)']; ?>">
-      End Semester
-    </th>
-  </tr>
+  
+  <thead>
+     <tr>
+      <th scope="col">
+        Examination Roll No.
+      </th>
+      <th scope="col" colspan="<?php echo $rowMidQuestionCountCo['COUNT(DISTINCT co.oid)'] ?>">
+        Internal Assesment
+      </th>
+      <th scope="col" colspan="<?php echo $rowEndQuestionCountCo['COUNT(DISTINCT co.oid)']; ?>">
+        End Semester
+      </th>
+    </tr>
+  <thead>
+  
   <tr>
     <td>
 
