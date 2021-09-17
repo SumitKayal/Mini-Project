@@ -1,56 +1,58 @@
-
 body {
     font-family: "Lato", sans-serif;
     background-color: #c8d8e4;
-  }
+}
+
+
 /* NavBar style*/
-.Profile_img{
-    width :45px;
-    height:45px;
+
+.Profile_img {
+    width: 45px;
+    height: 45px;
     border-radius: 2rem;
 }
 
-.UnivLogo{
-    height: 2rem ;
+.UnivLogo {
+    height: 2rem;
     margin-left: 1rem;
     border-radius: 20%;
 }
-  
-  .sidebar {
+
+.sidebar {
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color:rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-  }
-  
-  .sidebar a {
+}
+
+.sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
     transition: 0.3s;
-  }
-  
-  .sidebar a:hover {
+}
+
+.sidebar a:hover {
     color: #f1f1f1;
-  }
-  
-  .sidebar .closebtn {
+}
+
+.sidebar .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-  }
-  
-  .openbtn {
+}
+
+.openbtn {
     font-size: 20px;
     cursor: pointer;
     background-color: white;
@@ -58,109 +60,118 @@ body {
     padding: 10px 15px;
     border: none;
     border-radius: 0.5rem;
-  }
-  
-  .openbtn:hover {
+}
+
+.openbtn:hover {
     background-color: #444;
-  }
-  
-  #main {
+}
+
+#main {
     transition: margin-left .5s;
     padding: 16px;
-  }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-  }
-  
-  
-  /*End NavBar style*/
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+
+/*End NavBar style*/
 
 
 /*Heading Block*/
-.headingBlock{
-  margin: 7rem 4rem 1rem;
-  border-radius: 2rem;
-  background-image: url("Image/background.jpg");
+
+.headingBlock {
+    margin: 7rem 4rem 1rem;
+    border-radius: 2rem;
+    background-image: url("Image/background.jpg");
 }
 
-.headingBlock_h1{
-padding: 2rem 2rem 12rem;
-color: black;
+.headingBlock_h1 {
+    padding: 2rem 2rem 12rem;
+    color: black;
 }
 
-a.anchorHB{
-margin-right: 5%;
-text-decoration: none;
-font-weight: bolder;
-
+a.anchorHB {
+    margin-right: 5%;
+    text-decoration: none;
+    font-weight: bolder;
 }
 
-.anchorHeadingBlock{
-margin-left: 52%;
-
+.anchorHeadingBlock {
+    margin-left: 45%;
 }
 
-@media(max-width:1115px){
-.anchorHeadingBlock{
-  margin-left: 0;
-  text-align: center;
+@media(max-width:1115px) {
+    .anchorHeadingBlock {
+        margin-left: 0;
+        text-align: center;
+    }
 }
-}
+
+
 /*End Heading Block*/
 
-  /*course assign block*/
 
-.heading3{
-  padding: 2rem 5rem 0.5rem;
-  text-shadow: 0 0 7px rgb(14, 9, 26);
-  color:rgb(253, 246, 246);
-  
-  
+/*course assign block*/
+
+.heading3 {
+    padding: 2rem 5rem 0.5rem;
+    text-shadow: 0 0 7px rgb(14, 9, 26);
+    color: rgb(253, 246, 246);
 }
 
-  .sub{
-    margin-left:4rem;
-  }
-  .selectYear{
+.sub {
+    margin-left: 4rem;
+}
+
+.selectYear {
     padding-top: 0.35rem;
-  }
-  @media(max-width:768px){
-    .sub{
-      text-align: center;
-      margin-left:0;
+}
+
+@media(max-width:768px) {
+    .sub {
+        text-align: center;
+        margin-left: 0;
     }
-  }
-  /*end course assign block*/
-
-  /*Courses*/
-
-.syllabus{
-  margin : 2% 12% 1%;
-  
-  
-}
-.card{
-  border-radius: 1rem;
-  
-  border:none;
-  
-}
-.card-body{
-  background-color: rgba(255, 125, 125, 0.2);
-  border-radius: 1rem;
 }
 
 
-a.cardAnchorTag:hover{
-  text-decoration: none;
-  color:white;
-  
+/*end course assign block*/
 
+
+/*Courses*/
+
+.syllabus {
+    margin: 2% 12% 1%;
 }
-a.cardAnchorTag{
-  color: rgb(45, 45, 248);
+
+.card {
+    border-radius: 1rem;
+    border: none;
 }
- /*End Courses*/
+
+.card-body {
+    background-color: rgba(255, 125, 125, 0.2);
+    border-radius: 1rem;
+}
+
+a.cardAnchorTag:hover {
+    text-decoration: none;
+    color: white;
+}
+
+a.cardAnchorTag {
+    color: rgb(45, 45, 248);
+}
+
+
+/*End Courses*/
