@@ -115,7 +115,7 @@ $email = $_GET['email'];
                         <div class="col-md-4">
 
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4" style="text-align:center;">
                             <label for="">Examination Roll:</label>
                             <select class="select form-control-sm" id="exroll1" name="exroll">
                                 <?php

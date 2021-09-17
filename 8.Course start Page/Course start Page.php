@@ -83,7 +83,7 @@ $email = $_GET['email'];
       <a class="anchorHB" href="../9.Course_Course_outcome page\Course_Course_outcome page.php?id=<?php echo $_GET['id']; ?>&year=<?php echo $_GET['year']; ?>">Set Course Outcome</a>
       <a class="anchorHB" href="../10.Course_QuestionPaper\Course_Question_paper.php?id=<?php echo $_GET['id']; ?>&year=<?php echo $_GET['year']; ?>">Question Paper</a>
       <a class="anchorHB" href="../11.1.Course_Student_score_page\Course_Student_score_page.php?id=<?php echo $_GET['id']; ?>&year=<?php echo $_GET['year']; ?>">Student Score</a>
-      <a class="anchorHB" href="../COAttainment.php?id=<?php echo $_GET['id']; ?>&year=<?php echo $_GET['year']; ?>">CO Attainment</a>
+      <a class="anchorHB" href="../COAttainment1.php?id=<?php echo $_GET['id']; ?>&year=<?php echo $_GET['year']; ?>">CO Attainment</a>
     </div>
   </div>
 

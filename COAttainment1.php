@@ -37,7 +37,58 @@ $countMidQuestionCo="SELECT COUNT(DISTINCT co.oid) FROM mid_question mq,course_o
 $resultMidQuestionCountCo = $conn->query($countMidQuestionCo);
 $rowMidQuestionCountCo = $resultMidQuestionCountCo->fetch_assoc();
 ?>
-<table border='1'>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+	<style>
+		body {
+			text-align: center;
+			background-color: #e3e3e3;
+		}
+
+		h1 {
+			font-family: 'Montserrat', sans-serif;
+			margin: 2rem auto 1rem;
+
+		}
+
+		h4 {
+			font-family: 'Lilita One', cursive;
+			margin-top: 5rem;
+		}
+
+		p {
+			font-weight: 700;
+		}
+
+		div {
+			
+		}
+
+		table {
+			margin: 0 auto;
+		}
+	</style>
+	<title>CO Attainment</title>
+</head>
+
+<body>
+	<h4>Bachelor of Technology</h4>
+	<h1><?php echo $row['CourseName']; ?>(<?php echo $id ?>) </h1>
+	<p>Year:<?php echo $year ?></p>
+	<br>
+	<div class="container-fluid shadow-lg p-3 mb-5 bg-body rounded" >
+<table class="table table-bordered  table-striped">
+	<thead class="table-dark">
 	<tr>
 		<th>
 			Examination Roll No.
@@ -109,6 +160,7 @@ $rowMidQuestionCountCo = $resultMidQuestionCountCo->fetch_assoc();
 		<?php }?>
 
 	</tr>
+	</thead>
 	<?php
 	$studentCount=0;
 	$allStudentInCourseSql = "SELECT exmroll FROM course c,stu_info sf WHERE c.CID='$id' AND sf.ssem=c.sem ORDER BY exmroll";
@@ -180,7 +232,7 @@ $rowMidQuestionCountCo = $resultMidQuestionCountCo->fetch_assoc();
 	        foreach ($outComeID as $rowCoId) {
 	        	?>
 	        	<td>
-	        		<span style="color:red;"><?php echo number_format(floor($indevidualCoOfAStudent[$rowCoId] * 100) / 100, 2, '. ', '') . "%"; ?></span>
+	        		<span style="color:red;"><?php echo number_format(floor($indevidualCoOfAStudent[$rowCoId] * 100) / 100, 2, '.', '') . "%"; ?></span>
 	        	</td>
 
 	        	<?php 
@@ -201,7 +253,7 @@ $rowMidQuestionCountCo = $resultMidQuestionCountCo->fetch_assoc();
 		        	$indevidualCoOfAStudent[$rowFeedback['oid']]=$indevidualCoOfAStudent[$rowFeedback['oid']]*.9 + $feedbackParcentage*.1;
 		        	?>
 		        	<td>
-		        		<span style="color:red;"><?php echo number_format(floor($feedbackParcentage * 100) / 100, 2, '. ', '') . "%"; ?></span>
+		        		<span style="color:red;"><?php echo number_format(floor($feedbackParcentage * 100) / 100, 2, '.', '') . "%"; ?></span>
 		        	</td>
 		        	<?php $i++;
 		        }
@@ -219,7 +271,7 @@ $rowMidQuestionCountCo = $resultMidQuestionCountCo->fetch_assoc();
 	        	$totalCoObtail[$rowCoId]+=$indevidualCoOfAStudent[$rowCoId];
 	        	?>
 	        	<td>
-	        		<span style="color:red;"><?php echo number_format(floor($indevidualCoOfAStudent[$rowCoId] * 100) / 100, 2, '. ', '') . "%"; ?></span>
+	        		<span style="color:red;"><?php echo number_format(floor($indevidualCoOfAStudent[$rowCoId] * 100) / 100, 2, '.', '') . "%"; ?></span>
 	        	</td>
 
 	        	<?php 
@@ -239,15 +291,20 @@ $rowMidQuestionCountCo = $resultMidQuestionCountCo->fetch_assoc();
 		$conn->query($updateAttainmentSql);
 	}
 ?>
-<table border='1'>
-	<tr>
-		<th>
-			Course Outcome
-		</th>
-		<th>
-			Attainment
-		</th>
-	</tr>
+</div>
+
+<!--second table-->
+<table class="table table-bordered  table-striped">
+	<thead class="table-dark">
+		<tr>
+			<th>
+				Course Outcome
+			</th>
+			<th>
+				Attainment
+			</th>
+		</tr>
+	</thead>
 	<tr>
 		<?php 
 		foreach ($outComeID as $rowCoId){
@@ -267,3 +324,7 @@ $rowMidQuestionCountCo = $resultMidQuestionCountCo->fetch_assoc();
 		}?>
 	</tr>
 </table>
+
+</body>
+
+</html>
